@@ -17,7 +17,7 @@ const main = async () => {
 
   const app = express();
   const redisClient = createClient({
-    url: "redis://localhost:3001",
+    url: "redis://localhost:6379",
   });
 
   try {
@@ -60,13 +60,13 @@ const main = async () => {
   apolloServer.applyMiddleware({
     app,
     cors: {
-      origin: ["https://studio.apollographql.com", "http://localhost:3000"],
+      origin: ["https://studio.apollographql.com", "http://localhost:4000"],
       credentials: true,
     },
   });
 
-  app.listen(3000, () => {
-    console.log("Server listening on port 3000.");
+  app.listen(4000, () => {
+    console.log("Server listening on port 4000.");
   });
 };
 
